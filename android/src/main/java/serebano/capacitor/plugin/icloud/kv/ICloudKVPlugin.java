@@ -19,4 +19,14 @@ public class ICloudKVPlugin extends Plugin {
         ret.put("value", implementation.echo(value));
         call.resolve(ret);
     }
+
+    @PluginMethod
+    public void set(PluginCall call) {
+        call.unimplemented("Not supported on Android.");
+    }
+
+    @PluginMethod
+    public void get(PluginCall call) {
+        call.unimplemented("Not supported on Android.");
+    }
 }

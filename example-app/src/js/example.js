@@ -2,7 +2,7 @@ import { ICloudKV } from '@serebano/capacitor-plugin-icloud-kv';
 
 async function main() {
   console.log('[ICloudKV]', 'Starting...');
-const listener = await ICloudKV.addListener('icloudSync', async (data) => {
+const listener = await ICloudKV.addListener('icloudKVDidChange', async (data) => {
   console.log('[ICloudKV]', 'Synced keys:', data.keys, 'reason:', data.reason);
   for (const key of data.keys) {
     const result = await ICloudKV.get({ key });
