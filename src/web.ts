@@ -7,4 +7,10 @@ export class ICloudKVWeb extends WebPlugin implements ICloudKVPlugin {
     console.log('ECHO', options);
     return options;
   }
+  async set(): Promise<void> {
+    throw this.unimplemented('Not supported on web.');
+  }
+  async get(): Promise<{ value?: string }> {
+    throw this.unimplemented('Not supported on web.');
+  }
 }
