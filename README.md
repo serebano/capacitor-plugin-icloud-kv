@@ -41,6 +41,7 @@ console.log('Theme:', result.value);
 * [`addListener('icloudKVDidChange', ...)`](#addlistenericloudkvdidchange-)
 * [Interfaces](#interfaces)
 * [Type Aliases](#type-aliases)
+* [Enums](#enums)
 
 </docgen-index>
 
@@ -178,19 +179,15 @@ These correspond to the types supported by NSUbiquitousKeyValueStore
 <code>string | number | boolean | <a href="#date">Date</a> | ICloudKVValue[] | { [key: string]: <a href="#icloudkvvalue">ICloudKVValue</a> }</code>
 
 
+### Enums
+
+
 #### ICloudKVSyncReason
 
-Reason Codes (Apple-defined)
-
-The reason you get is an integer, which maps to:
-```
-1 — Initial sync from iCloud
-2 — External change from another device
-3 — Change due to server push
-```
-
-Apple doesn't provide official constants, so you'll interpret them manually.
-
-<code>1 | 2 | 3</code>
+| Members               | Value          |
+| --------------------- | -------------- |
+| **`INITIAL_SYNC`**    | <code>1</code> |
+| **`EXTERNAL_CHANGE`** | <code>2</code> |
+| **`SERVER_PUSH`**     | <code>3</code> |
 
 </docgen-api>
