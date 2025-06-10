@@ -9,6 +9,28 @@ npm install @serebano/capacitor-plugin-icloud-kv
 npx cap sync
 ```
 
+## ⚙️ iOS Setup
+
+Enable iCloud + Key-Value Storage in Xcode:
+
+1. Open `ios/App.xcworkspace`.
+2. Select your app target → Signing & Capabilities.
+3. Add **iCloud** capability and check **Key‑Value Storage**.
+
+## 📦 Usage
+
+```ts
+import { ICloudKV } from '@serebano/capacitor-plugin-icloud-kv';
+
+ICloudKV.addListener('icloudSync', data => {
+  console.log('Synced keys:', data.keys, 'reason:', data.reason);
+});
+
+await ICloudKV.set({ key: 'theme', value: 'dark' });
+const result = await ICloudKV.get({ key: 'theme' });
+console.log('Theme:', result.value);
+```
+
 ## API
 
 <docgen-index>
