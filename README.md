@@ -184,10 +184,11 @@ These correspond to the types supported by NSUbiquitousKeyValueStore
 
 #### ICloudKVSyncReason
 
-| Members               | Value          |
-| --------------------- | -------------- |
-| **`INITIAL_SYNC`**    | <code>1</code> |
-| **`EXTERNAL_CHANGE`** | <code>2</code> |
-| **`SERVER_PUSH`**     | <code>3</code> |
+| Members                      | Value          | Description                            |
+| ---------------------------- | -------------- | -------------------------------------- |
+| **`SERVER_CHANGE`**          | <code>0</code> | Change came from iCloud                |
+| **`INITIAL_SYNC_CHANGE`**    | <code>1</code> | Initial sync occurred                  |
+| **`QUOTA_VIOLATION_CHANGE`** | <code>2</code> | Change removed due to quota violations |
+| **`ACCOUNT_CHANGE`**         | <code>3</code> | iCloud account changed                 |
 
 </docgen-api>

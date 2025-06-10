@@ -1,32 +1,26 @@
 import type { PluginListenerHandle } from "@capacitor/core";
 
 /**
- * @see https://github.com/serebano/capacitor-plugin-icloud-kv#icloudkvdidsyncreason
- * ```
- * 1 - Initial sync from iCloud
- * 2 - External change from another device
- * 3 - Change due to server push
- * ```
+ * Sync reason codes
  */
 export enum ICloudKVSyncReason {
-  INITIAL_SYNC = 1,
-  EXTERNAL_CHANGE = 2,
-  SERVER_PUSH = 3
+  /**
+   * Change came from iCloud
+   */
+  SERVER_CHANGE = 0,
+  /**
+   * Initial sync occurred
+   */
+  INITIAL_SYNC_CHANGE = 1,
+  /**
+   * Change removed due to quota violations
+   */
+  QUOTA_VIOLATION_CHANGE = 2,
+  /**
+   * iCloud account changed
+   */
+  ACCOUNT_CHANGE = 3
 }
-
-
-/**
- * Reason Codes (Apple-defined)
- *
- * The reason you get is an integer, which maps to:
- * ```
- * 1 — Initial sync from iCloud
- * 2 — External change from another device
- * 3 — Change due to server push
- * ```
- *
- * Apple doesn't provide official constants, so you'll interpret them manually.
- */
 
 /**
  * Supported data types for iCloud Key-Value storage
