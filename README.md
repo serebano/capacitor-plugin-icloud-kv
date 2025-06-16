@@ -38,6 +38,7 @@ console.log('Theme:', result.value);
 * [`echo(...)`](#echo)
 * [`set(...)`](#set)
 * [`get(...)`](#get)
+* [`remove(...)`](#remove)
 * [`addListener('icloudKVDidChange', ...)`](#addlistenericloudkvdidchange-)
 * [Interfaces](#interfaces)
 * [Type Aliases](#type-aliases)
@@ -87,6 +88,19 @@ get(options: { key: string; }) => Promise<{ value?: ICloudKVValue; }>
 | **`options`** | <code>{ key: string; }</code> |
 
 **Returns:** <code>Promise&lt;{ value?: <a href="#icloudkvvalue">ICloudKVValue</a>; }&gt;</code>
+
+--------------------
+
+
+### remove(...)
+
+```typescript
+remove(options: { key: string; }) => Promise<void>
+```
+
+| Param         | Type                          |
+| ------------- | ----------------------------- |
+| **`options`** | <code>{ key: string; }</code> |
 
 --------------------
 
