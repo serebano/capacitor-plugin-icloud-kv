@@ -29,4 +29,9 @@ public class ICloudKVPlugin extends Plugin {
     public void get(PluginCall call) {
         call.unimplemented("Not supported on Android.");
     }
+
+    @PluginMethod
+    public void remove(PluginCall call) {
+        call.unimplemented("Not supported on Android.");
+    }
 }

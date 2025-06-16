@@ -13,6 +13,7 @@ public class ICloudKVPlugin: CAPPlugin, CAPBridgedPlugin {
         CAPPluginMethod(name: "echo", returnType: CAPPluginReturnPromise),
         CAPPluginMethod(name: "set", returnType: CAPPluginReturnPromise),
         CAPPluginMethod(name: "get", returnType: CAPPluginReturnPromise),
+        CAPPluginMethod(name: "remove", returnType: CAPPluginReturnPromise),
         // CAPPluginMethod(name: "addListener", returnType: CAPPluginReturnPromise)
     ]
     private let implementation = ICloudKV()
@@ -63,6 +64,17 @@ public class ICloudKVPlugin: CAPPlugin, CAPBridgedPlugin {
         let value = store.object(forKey: key)
         let jsValue = convertToJSValue(value)
         call.resolve(["value": jsValue])
+    }
+
+    @objc func remove(_ call: CAPPluginCall) {
+        guard let key = call.getString("key") else {
+            call.reject("Must provide key")
+            return
+        }
+        
+        store.removeObject(forKey: key)
+        store.synchronize()
+        call.resolve()
     }
 
     @objc func echo(_ call: CAPPluginCall) {

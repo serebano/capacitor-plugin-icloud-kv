@@ -13,4 +13,7 @@ export class ICloudKVWeb extends WebPlugin implements ICloudKVPlugin {
   async get(_options: { key: string }): Promise<{ value?: ICloudKVValue }> {
     throw this.unimplemented('Not supported on web.');
   }
+  async remove(_options: { key: string }): Promise<void> {
+    throw this.unimplemented('Not supported on web.');
+  }
 }

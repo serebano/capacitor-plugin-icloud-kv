@@ -38,6 +38,7 @@ export interface ICloudKVPlugin {
   echo(options: { value: string }): Promise<{ value: string }>;
   set(options: { key: string; value: ICloudKVValue }): Promise<void>;
   get(options: { key: string }): Promise<{ value?: ICloudKVValue }>;
+  remove(options: { key: string }): Promise<void>;
   addListener(
     eventName: 'icloudKVDidChange',
     listenerFunc: (data: { reason: ICloudKVSyncReason; keys: string[] }) => void

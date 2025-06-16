@@ -1,6 +1,6 @@
 {
   "name": "@serebano/capacitor-plugin-icloud-kv",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Capacitor 7 plugin for syncing simple key‑value preferences across iCloud on iOS.",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
